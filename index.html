@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexli Store</title>
+    <title>Store</title>
     <style>
         body {
             margin: 0;
@@ -12,43 +12,36 @@
             color: #ffffff;
             -webkit-font-smoothing: antialiased;
         }
-        .container { padding: 20px; }
-        .large-title {
-            font-size: 34px;
-            font-weight: 700;
-            margin-bottom: 24px;
-            letter-spacing: -0.5px;
-            border-bottom: 1px solid #2C2C2E;
-            padding-bottom: 12px;
-        }
+        .container { padding: 10px 20px; }
+        
         .app-row {
             display: flex;
             align-items: center;
-            padding: 16px 0;
+            padding: 12px 0;
             border-bottom: 1px solid #1C1C1E;
         }
         .app-icon {
-            width: 64px;
-            height: 64px;
-            border-radius: 22%; /* Фирменное скругление Apple */
+            width: 48px;
+            height: 48px;
+            border-radius: 22%;
             background: linear-gradient(135deg, #38bdf8, #0284c7);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 28px;
+            font-size: 24px;
             font-weight: bold;
             color: white;
             flex-shrink: 0;
         }
         .app-info {
             flex-grow: 1;
-            margin-left: 16px;
+            margin-left: 14px;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
-        .app-title { font-size: 17px; font-weight: 600; margin: 0; }
-        .app-subtitle { font-size: 13px; color: #8E8E93; margin: 4px 0 0; }
+        .app-title { font-size: 16px; font-weight: 600; margin: 0; }
+        .app-subtitle { font-size: 12px; color: #8E8E93; margin: 2px 0 0; }
         
         .action-area {
             width: 76px;
@@ -61,8 +54,8 @@
             color: #38bdf8;
             border: none;
             border-radius: 16px;
-            padding: 7px 18px;
-            font-size: 15px;
+            padding: 6px 16px;
+            font-size: 14px;
             font-weight: 700;
             cursor: pointer;
         }
@@ -71,8 +64,8 @@
             align-items: center;
             justify-content: center;
             position: relative;
-            width: 36px;
-            height: 36px;
+            width: 32px;
+            height: 32px;
         }
         .progress-circle {
             width: 100%;
@@ -84,8 +77,8 @@
             justify-content: center;
         }
         .progress-inner {
-            width: 30px;
-            height: 30px;
+            width: 26px;
+            height: 26px;
             background-color: #000000;
             border-radius: 50%;
             display: flex;
@@ -93,7 +86,7 @@
             justify-content: center;
         }
         .progress-text {
-            font-size: 9px;
+            font-size: 8px;
             font-weight: bold;
             color: #38bdf8;
         }
@@ -101,7 +94,6 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="large-title">Nexli Store</h1>
         
         <!-- Карточка вашего мессенджера -->
         <div class="app-row">
@@ -143,23 +135,20 @@
             const circle = document.getElementById('progressCircle');
             const text = document.getElementById('progressText');
             
-            // Прячем кнопку, показываем кольцо
             btn.style.display = 'none';
             wrapper.style.display = 'flex';
             
             let percent = 0;
             const interval = setInterval(() => {
                 percent += 2;
-                // Заливка кольца по кругу
                 circle.style.background = `conic-gradient(#38bdf8 ${percent}%, #2C2C2E ${percent}%)`;
                 text.innerText = percent + '%';
                 
-                // Завершение скачивания
                 if (percent >= 100) {
                     clearInterval(interval);
                     wrapper.style.display = 'none';
                     btn.style.display = 'block';
-                    btn.innerText = 'ОТКР.'; // Изменение текста кнопки после установки
+                    btn.innerText = 'ОТКР.';
                     btn.onclick = null;
                 }
             }, 50);
