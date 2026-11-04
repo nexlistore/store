@@ -1,0 +1,7 @@
+{
+  "versionCode": 2,
+  "versionName": "1.1",
+  "updateUrl": "https://github.com/nexlistore/store/raw/main/grom.apk",
+  "releaseNotes": "Новая система обновлений",
+  "forceUpdate": true
+}
